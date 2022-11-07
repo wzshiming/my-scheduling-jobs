@@ -1,0 +1,24 @@
+name: Sync fork
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  sync-fork:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+        - wzshiming/kubernetes
+        - wzshiming/containerd
+        - wzshiming/runc
+        - wzshiming/istio
+        - wzshiming/kwok
+    steps:
+    - name: Sync Fork
+      uses: wzshiming/action-sync-fork@v1
+      env:
+        REPOSITORY: ${{ matrix.repo }}
+        GH_TOKEN: ${{ secrets.GH_FORK_REPO_TOKEN }}
