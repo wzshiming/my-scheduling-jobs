@@ -16,7 +16,7 @@ jobs:
         - wzshiming/runc
         - wzshiming/istio
         - wzshiming/kwok
-        - wzshining/homebrew-core
+        - wzshiming/homebrew-core
     steps:
     - name: Sync Fork
       uses: wzshiming/action-sync-fork@v1
