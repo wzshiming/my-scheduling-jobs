@@ -23,4 +23,6 @@ jobs:
       uses: wzshiming/action-sync-fork@v1
       env:
         REPOSITORY: ${{ matrix.repo }}
+        # permissions:
+        #   workflows: write
         GH_TOKEN: ${{ secrets.GH_FORK_REPO_TOKEN }}
